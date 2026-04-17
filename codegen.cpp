@@ -68,6 +68,31 @@ iris_rin:
 iris_rt_add:
     push rbp
     mov rbp, rsp
+    cmp rdi, 2
+    jne .Ladd_not_str
+    cmp rdx, 2
+    jne .Ladd_not_str
+    mov r14, rsi
+    mov r15, rcx
+    mov rdi, rsi
+    call strlen
+    mov r12, rax
+    mov rdi, r15
+    call strlen
+    lea rdi, [r12 + rax + 1]
+    call malloc
+    mov rdi, rax
+    mov rsi, r14
+    mov r13, rax
+    call strcpy
+    mov rdi, r13
+    mov rsi, r15
+    call strcat
+    mov eax, 2
+    mov rdx, r13
+    pop rbp
+    ret
+.Ladd_not_str:
     cmp rdi, 1
     je .Ladd_float
     cmp rdx, 1
@@ -523,4 +548,4 @@ void AsmCodeGen::generate(Program* prog) {
     } else {
         emitCMain(prog);
     }
-}
+};

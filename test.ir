@@ -1,0 +1,12 @@
+var a = 12;
+var b = 5;
+var c = "Hello";
+var d = " World";
+
+
+rout(a+b);
+rout(a-b);
+rout(a*b);
+rout(a/b);
+rout(a//b);
+rout(c+d);
