@@ -1,12 +1,18 @@
-var a = 12;
-var b = 5;
-var c = "Hello";
-var d = " World";
+var first = "Hello";
+var last = "class";
+var greeting = first + last;
+var c = 12;
+var d = 7;
+fun add(a, b){
+
+    return(a+b);
+}
 
 
-rout(a+b);
-rout(a-b);
-rout(a*b);
-rout(a/b);
-rout(a//b);
+rout(greeting);
+rout(add(3,2));
+rout(c/d);
+rout(c*d);
+rout(c-d);
+rout(c//d);
 rout(c+d);

@@ -47,7 +47,7 @@ struct IdentExpr : ASTNode {
     }
 };
 
-struct BinaryExpr : ASTNode {
+struct BinaryExpr : ASTNode {//a + b * c
     std::string op;
     NodePtr left, right;
     BinaryExpr(std::string op, NodePtr l, NodePtr r)
